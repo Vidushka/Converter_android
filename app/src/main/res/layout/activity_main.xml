@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hsenid.coverter.MainActivity">
+
+    <EditText
+        android:id="@+id/txtKilometer"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="67dp"
+        android:hint="km"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <EditText
+        android:id="@+id/txtMile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtKilometer"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignStart="@+id/txtKilometer"
+        android:layout_below="@+id/txtKilometer"
+        android:layout_marginTop="18dp"
+        android:hint="Miles"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <Button
+        android:id="@+id/toMiles"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtMile"
+        android:layout_marginLeft="29dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="87dp"
+        android:layout_toEndOf="@+id/toKm"
+        android:layout_toRightOf="@+id/toKm"
+        android:onClick="convertToMiles"
+        android:text="To Miles" />
+
+    <Button
+        android:id="@+id/toKm"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/toMiles"
+        android:layout_alignBottom="@+id/toMiles"
+        android:layout_alignLeft="@+id/txtMile"
+        android:layout_alignStart="@+id/txtMile"
+        android:layout_marginLeft="79dp"
+        android:layout_marginStart="79dp"
+        android:onClick="convertToKm"
+        android:text="To km" />
+
+</android.widget.RelativeLayout>

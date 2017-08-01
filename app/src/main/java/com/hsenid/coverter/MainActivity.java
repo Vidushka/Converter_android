@@ -1,5 +1,6 @@
 package com.hsenid.coverter;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -21,12 +22,14 @@ public class MainActivity extends AppCompatActivity {
         EditText kilometers = (EditText) findViewById(R.id.txtKilometer);
         EditText miles = (EditText) findViewById(R.id.txtMile);
 
-        if (!kilometers.getText().equals("")) {
+        if (!kilometers.getText().toString().matches("")) {
             distance = Double.valueOf(kilometers.getText().toString()) * 1.6;
             convertedDistence = String.valueOf(distance);
             miles.setText(convertedDistence);
         } else {
-            Toast.makeText(getParent(), "No value entered !!!", Toast.LENGTH_SHORT);
+            kilometers.setHint("Type here");
+            kilometers.setHintTextColor(Color.RED);
+            Toast.makeText(getApplicationContext(), "No value entered !!!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -34,12 +37,14 @@ public class MainActivity extends AppCompatActivity {
         EditText miles = (EditText) findViewById(R.id.txtMile);
         EditText kilometers = (EditText) findViewById(R.id.txtKilometer);
 
-        if (!miles.getText().equals("")) {
+        if (!miles.getText().toString().matches("")) {
             distance = Double.valueOf(miles.getText().toString()) / 1.6;
             convertedDistence = String.valueOf(distance);
             kilometers.setText(convertedDistence);
         } else {
-            Toast.makeText(getParent(), "No value entered !!!", Toast.LENGTH_SHORT);
+            miles.setHint("Type here");
+            miles.setHintTextColor(Color.RED);
+            Toast.makeText(getApplicationContext(), "No value entered !!!", Toast.LENGTH_SHORT).show();
         }
     }
 }
